@@ -36,6 +36,7 @@ dependencies:
   
   cupertino_icons: ^1.0.8
   flutter_compass: ^0.8.1
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:

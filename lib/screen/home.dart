@@ -1,7 +1,10 @@
 import 'package:aurudu/const/color.dart';
 import 'package:aurudu/screen/ahara.dart';
 import 'package:aurudu/screen/aurudu_udawa.dart';
+import 'package:aurudu/screen/hisatel.dart';
+import 'package:aurudu/screen/job.dart';
 import 'package:aurudu/screen/punya_kalaya.dart';
+import 'package:aurudu/screen/weda_allima.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/event_container.dart';
@@ -65,7 +68,7 @@ class _HomeState extends State<Home> {
                 height: 10,
               ),
               EventContainer(
-                date: "අප්‍රේල්\n 13",
+                date: "අප්‍රේල්\n13",
                 title: "පුණ්‍ය කාලය",
                 description:
                     "අප්‍රේල් මස 13 වැනි ඉරිදා\nඅපරභාග 08-57 සිට පසුදින\nඑනම් 14 වැනි සඳුදා පූර්වභාග\n09-45 දක්වා ",
@@ -81,7 +84,7 @@ class _HomeState extends State<Home> {
               ),
               const SizedBox(height: 10),
               EventContainer(
-                date: "අප්‍රේල්\n 14",
+                date: "අප්‍රේල්\n14",
                 title: "අලුත් අවුරුදු උදාව",
                 description:
                     "අප්‍රේල් මස 14 වැනි සඳුදා \nදින පූර්වභාග 03-21 ට \nසිංහල අලුත් අවුරුද්ද උදාවෙයි",
@@ -98,7 +101,7 @@ class _HomeState extends State<Home> {
               ),
               const SizedBox(height: 10),
               EventContainer(
-                date: "අප්‍රේල්\n 14",
+                date: "අප්‍රේල්\n14",
                 title: "ආහර පිසීම",
                 description:
                     "අප්‍රේල් මස 14 වැනි සඳුදා\nපූර්වභාග 04-04 ට තඹ වර්ණ\nවස්ත්‍රාභරණයෙන් සැරසී දකුණු\nදිශාව බලා",
@@ -114,30 +117,54 @@ class _HomeState extends State<Home> {
                 },
               ),
               const SizedBox(height: 10),
-              const EventContainer(
-                date: "අප්‍රේල්\n 14",
+              EventContainer(
+                date: "අප්‍රේල්\n14",
                 title: "වැඩ ඇල්ලීම-ගනුදෙනු\nකිරීම-ආහාර අනුභවය",
                 description: "පූර්වභාග 06-44 ට දකුණු\nදිශාව බලා",
                 backgroundColor: Colors.orange,
                 primaryColor: Colors.black,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WedaAllima(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 10),
-              const EventContainer(
-                date: "අප්‍රේල්\n 16",
+              EventContainer(
+                date: "අප්‍රේල්\n16",
                 title: "හිසතෙල් ගෑම",
                 description:
                     "පූර්වභාග 09-04 ට පච්ච\nහෙවත් කොල පැහැති\nවස්ත්‍රාභරණයෙන් සැරසී\nඋතුරු දිශාව",
                 backgroundColor: Colors.green,
                 primaryColor: Colors.black,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Hisatel(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 10),
-              const EventContainer(
-                date: "අප්‍රේල්\n 17",
+              EventContainer(
+                date: "අප්‍රේල්\n17",
                 title: "රැකීරක්ෂා සඳහා යෑම",
                 description:
                     "පූර්වභාග 09-03 ට රන්වන්\nපැහැති වස්ත්‍රාභරණයෙන්\nසැරසී උතුරු දිශාව බලා ",
                 backgroundColor: Colors.blue,
                 primaryColor: Colors.black,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Job(),
+                    ),
+                  );
+                },
               ),
             ],
           ),
