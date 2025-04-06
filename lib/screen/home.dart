@@ -1,4 +1,5 @@
 import 'package:aurudu/const/color.dart';
+import 'package:aurudu/screen/punya_kalaya.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/event_container.dart';
@@ -15,77 +16,114 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+      appBar: AppBar(
+        backgroundColor: appbarBackgroundColor,
+        elevation: 2,
+        automaticallyImplyLeading: false,
+        title: Row(
           children: [
-            Row(
-              children: [
-                Image.asset(
-                  "assets/images/logo_2.png",
-                  height: 70,
-                  width: 60,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "සුබ අලුත් අවුරුද්දක් වේවා",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: primaryColor,
-                      fontFamily: "SinhalaFont"),
-                ),
-              ],
+            Image.asset(
+              "assets/images/logo_2.png",
+              height: 40,
+              width: 40,
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            latestContainer(),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(width: 10),
             Text(
-              "ඉදිරි කලාසටහන",
+              "සුබ අලුත් අවුරුද්දක් වේවා",
               style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: primaryColor,
-                  fontFamily: "SinhalaFont"),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const EventContainer(
-              date: "අප්‍රේල්\n 13",
-              title: "අලුත් අවුරුදු උදාව",
-              description:
-                  "අප්‍රේල් මස 14 වැනි සඳුදා \nදින පූර්වභාග 03.21 ට \nසිංහල අලුත් අවුරුද්ද උදාවෙයි",
-              backgroundColor: Colors.green,
-              primaryColor: Colors.black,
-            ),
-            const SizedBox(height: 10),
-            const EventContainer(
-              date: "අප්‍රේල්\n 13",
-              title: "පුණ්‍ය කාලය",
-              description:
-                  "අප්‍රේල් මස 13 වැනි ඉරිදා\nඅපරභාග 08-57 සිට පසුදින\nඑනම් 14 වැනි සඳුදා පූර්වභාග\n09-45 දක්වා ",
-              backgroundColor: Colors.orange,
-              primaryColor: Colors.black,
-            ),
-            const SizedBox(height: 10),
-            const EventContainer(
-              date: "අප්‍රේල්\n 14",
-              title: "ආහර පිසීම",
-              description:
-                  "අප්‍රේල් මස 14 වැනි සඳුදා\nපූර්වභාග 04-04 ට තඹ වර්ණ\nවස්ත්‍රාභරණයෙන් සැරසී දකුණු\nදිශාව බලා",
-              backgroundColor: Colors.blue,
-              primaryColor: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: primaryColor,
+                fontFamily: "SinhalaFont",
+              ),
             ),
           ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              latestContainer(),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                "ඉදිරි කලාසටහන",
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: primaryColor,
+                    fontFamily: "SinhalaFont"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              EventContainer(
+                date: "අප්‍රේල්\n 13",
+                title: "පුණ්‍ය කාලය",
+                description:
+                    "අප්‍රේල් මස 13 වැනි ඉරිදා\nඅපරභාග 08-57 සිට පසුදින\nඑනම් 14 වැනි සඳුදා පූර්වභාග\n09-45 දක්වා ",
+                backgroundColor: Colors.orange,
+                primaryColor: Colors.black,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const PunyaKalaya()), // replace DetailsPage() with your page
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              const EventContainer(
+                date: "අප්‍රේල්\n 13",
+                title: "අලුත් අවුරුදු උදාව",
+                description:
+                    "අප්‍රේල් මස 14 වැනි සඳුදා \nදින පූර්වභාග 03-21 ට \nසිංහල අලුත් අවුරුද්ද උදාවෙයි",
+                backgroundColor: Colors.green,
+                primaryColor: Colors.black,
+              ),
+              const SizedBox(height: 10),
+              const EventContainer(
+                date: "අප්‍රේල්\n 14",
+                title: "ආහර පිසීම",
+                description:
+                    "අප්‍රේල් මස 14 වැනි සඳුදා\nපූර්වභාග 04-04 ට තඹ වර්ණ\nවස්ත්‍රාභරණයෙන් සැරසී දකුණු\nදිශාව බලා",
+                backgroundColor: Colors.blue,
+                primaryColor: Colors.black,
+              ),
+              const SizedBox(height: 10),
+              const EventContainer(
+                date: "අප්‍රේල්\n 14",
+                title: "වැඩ ඇල්ලීම-ගනුදෙනු\nකිරීම-ආහාර අනුභවය",
+                description: "පූර්වභාග 06-44 ට දකුණු\nදිශාව බලා",
+                backgroundColor: Colors.orange,
+                primaryColor: Colors.black,
+              ),
+              const SizedBox(height: 10),
+              const EventContainer(
+                date: "අප්‍රේල්\n 16",
+                title: "හිසතෙල් ගෑම",
+                description:
+                    "පූර්වභාග 09-04 ට පච්ච\nහෙවත් කොල පැහැති\nවස්ත්‍රාභරණයෙන් සැරසී\nඋතුරු දිශාව",
+                backgroundColor: Colors.green,
+                primaryColor: Colors.black,
+              ),
+              const SizedBox(height: 10),
+              const EventContainer(
+                date: "අප්‍රේල්\n 17",
+                title: "රැකීරක්ෂා සඳහා යෑම",
+                description:
+                    "පූර්වභාග 09-03 ට රන්වන්\nපැහැති වස්ත්‍රාභරණයෙන්\nසැරසී උතුරු දිශාව බලා ",
+                backgroundColor: Colors.blue,
+                primaryColor: Colors.black,
+              ),
+            ],
+          ),
         ),
       ),
     );
