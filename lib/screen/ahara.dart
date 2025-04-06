@@ -1,16 +1,21 @@
+import 'package:aurudu/widget/compass.dart';
+import 'package:flutter/material.dart';
+
+import 'package:flutter/material.dart';
+
 import 'dart:async';
 
 import 'package:aurudu/const/color.dart';
 import 'package:flutter/material.dart';
 
-class PunyaKalaya extends StatefulWidget {
-  const PunyaKalaya({super.key});
+class Ahara extends StatefulWidget {
+  const Ahara({super.key});
 
   @override
-  State<PunyaKalaya> createState() => _PunyaKalayaState();
+  State<Ahara> createState() => _AharaState();
 }
 
-class _PunyaKalayaState extends State<PunyaKalaya> {
+class _AharaState extends State<Ahara> {
   late Timer _timer;
   late DateTime fixedDateTime;
   late Duration remainingTime;
@@ -18,7 +23,7 @@ class _PunyaKalayaState extends State<PunyaKalaya> {
   @override
   void initState() {
     super.initState();
-    fixedDateTime = DateTime(2025, 4, 13, 20, 57);
+    fixedDateTime = DateTime(2025, 4, 14, 04, 04);
     remainingTime = fixedDateTime.difference(DateTime.now());
 
     // Start the timer only after remainingTime is set
@@ -59,7 +64,7 @@ class _PunyaKalayaState extends State<PunyaKalaya> {
               ),
               const SizedBox(width: 10),
               Text(
-                "පුණ්‍ය කාලය",
+                "ආහර පිසීම",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -74,7 +79,7 @@ class _PunyaKalayaState extends State<PunyaKalaya> {
           padding: EdgeInsets.all(10),
           child: const Center(
             child: Text(
-              "පුණ්‍ය කාලය ආරම්භ වී ඇත.",
+              "ආහර පිසීම ආරම්භ වී ඇත.",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
@@ -100,7 +105,7 @@ class _PunyaKalayaState extends State<PunyaKalaya> {
             ),
             const SizedBox(width: 10),
             Text(
-              "පුණ්‍ය කාලය",
+              "ආහර පිසීම",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -116,7 +121,7 @@ class _PunyaKalayaState extends State<PunyaKalaya> {
         children: [
           const SizedBox(height: 20),
           Text(
-            "පුණ්‍ය කාලය ආරම්භ වීමට ඉතිරි කාලය",
+            "ආහර පිසීම ආරම්භ වීමට ඉතිරි කාලය",
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
@@ -135,10 +140,12 @@ class _PunyaKalayaState extends State<PunyaKalaya> {
             ],
           ),
           const SizedBox(height: 20),
+          Compass(),
+          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.all(25),
             child: Text(
-              "අප්‍රේල් මස 13 වැනි ඉරිදා අපරභාග 08-57 සිට පසුදින එනම් 14 වැනි සඳුදා පූර්වභාග 09-45 දක්වා පුණ්‍ය කාලය බැවින් අපේල් මස් 13 ඉරිදා අපරභාග 08-57 ට පළමුව ආහාර පාන ගෙන සියලු වැඩ අත්හැර ආගමික වතාවත්වල යෙදීම ද පුණ්‍ය කාලයේ අපරභාග කොටස එනම් අප්‍රේල් මස 14 වැනි සඳුදා පූර්වභාග 03-21 සිට 14 වැනි සඳුදා පූර්වභාග 09-45 දක්වා පහත දැක්වෙන අයුරින් ආහාර පිසීම-වැඩ ඇල්ලීම-ගනුදෙනු කිරීම හා ආහාර අනුභවය ආදී නැකත් චාරිත්‍ර විධි ඉටු කිරීම මැනවි",
+              "අප්‍රේල් මස 14 වැනි සඳුදා පූර්වභාග 04-04 ට තඹ වර්ණ වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා ළිප් බැඳ ගිනි මොළවා කිරිබතක්ද කැවිලි වර්ගයක්ද දී කිරි සහ විලඳ ද පිළියෙල කර ගැනීම මැනවි",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,

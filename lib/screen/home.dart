@@ -1,4 +1,6 @@
 import 'package:aurudu/const/color.dart';
+import 'package:aurudu/screen/ahara.dart';
+import 'package:aurudu/screen/aurudu_udawa.dart';
 import 'package:aurudu/screen/punya_kalaya.dart';
 import 'package:flutter/material.dart';
 
@@ -73,28 +75,43 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            const PunyaKalaya()), // replace DetailsPage() with your page
+                        builder: (context) => const PunyaKalaya()),
                   );
                 },
               ),
               const SizedBox(height: 10),
-              const EventContainer(
-                date: "අප්‍රේල්\n 13",
+              EventContainer(
+                date: "අප්‍රේල්\n 14",
                 title: "අලුත් අවුරුදු උදාව",
                 description:
                     "අප්‍රේල් මස 14 වැනි සඳුදා \nදින පූර්වභාග 03-21 ට \nසිංහල අලුත් අවුරුද්ද උදාවෙයි",
                 backgroundColor: Colors.green,
                 primaryColor: Colors.black,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AuruduUdawa(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 10),
-              const EventContainer(
+              EventContainer(
                 date: "අප්‍රේල්\n 14",
                 title: "ආහර පිසීම",
                 description:
                     "අප්‍රේල් මස 14 වැනි සඳුදා\nපූර්වභාග 04-04 ට තඹ වර්ණ\nවස්ත්‍රාභරණයෙන් සැරසී දකුණු\nදිශාව බලා",
                 backgroundColor: Colors.blue,
                 primaryColor: Colors.black,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Ahara(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 10),
               const EventContainer(
